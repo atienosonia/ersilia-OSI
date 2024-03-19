@@ -28,7 +28,7 @@ The project was tested on Ubuntu 22.04.3 with Python 3.7.0
 2. Install conda dependency manager from [here](https://docs.conda.io/en/latest/)
 3. Create conda environment ( `conda create -n myenv` )
 4. Activate conda environment ( `conda activate myenv` )
-3. Install the requirements.txt file ( `conda install --file requirements.txt` )
+3. Install requirements.txt file ( `conda install --file requirements.txt` )
 
 ### [Usage](#usage)
 
@@ -57,11 +57,12 @@ Single SMILE string
  ```model.run(smiles)```
 
 ### [License](#license)
+
 > This project is licensed under the GNU General Public License - see the [LICENSE](LICENSE.md) file for details
 
 #### Technologies Used
 
-- [ersilia](https://scikit-learn.org/) for creating the models.
+- [ersilia](https://www.ersilia.io/) for creating the models.
 - [RDKit](https://www.rdkit.org/) for preparation of chemical data.
 - [Pandas](https://pandas.pydata.org/) for data manipulation.
 - [Matplotlib](https://matplotlib.org/) for visulizations.
