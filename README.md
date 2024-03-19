@@ -5,3 +5,15 @@
 ---
 ![numpy](https://img.shields.io/badge/Numpy-777BB4?style=for-the-badge&logo=numpy&logoColor=white)  ![pandas](https://img.shields.io/badge/Pandas-2C2D72?style=for-the-badge&logo=pandas&logoColor=white)   ![python](https://img.shields.io/badge/Python-FFD43B?style=for-the-badge&logo=python&logoColor=blue)    ![ersilia](https://img.shields.io/badge/ersilia-F7931E?style=for-the-badge&logo=scikit-learn&logoColor=white)    ![rdkit](https://img.shields.io/badge/RDKit-209117?style=for-the-badge&logo=nlp&logoColor=white)
 ---
+
+## Table Of Contents
+- [Prediction of hERG Channel Blockage](#Prediction-of-hERG-Channel-Blockage)
+  - [Table Of Contents](#table-of-contents)
+    - [Objective](#objective)
+    - [Installation](#installation)
+    - [Usage](#usage)
+    - [License](#license)
+    - [Acknowledgements](#acknowledgements)
+      - [Institution](#institution)
+      - [Technologies Used](#technologies-used)
+---
