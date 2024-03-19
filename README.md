@@ -60,7 +60,7 @@ Single SMILE string
 
 > This project is licensed under the GNU General Public License - see the [LICENSE](LICENSE.md) file for details
 
-#### Technologies Used
+### [Technologies Used](#technologies-used) 
 
 - [ersilia](https://www.ersilia.io/) for creating the models.
 - [RDKit](https://www.rdkit.org/) for preparation of chemical data.
