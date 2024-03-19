@@ -1,0 +1,7 @@
+ersilia
+python=3.7
+rdkit
+pandas
+numpy
+matplotlib
+seaborn
