@@ -16,19 +16,25 @@
       - [Institution](#institution)
       - [Technologies Used](#technologies-used)
 ---
+
 ### Objective
 > * To predict the probability of toxicity in the chemical compounds of drugs
 ---
+
 ### [Data](#data)
 > The dataset used for this project can be found in the zipped data folder. The dataset contains 1000 entries of SMILES
 ---
+
 ### [Installation](#installation)
 The project was tested on Ubuntu 22.04.3 with Python 3.7.0
 > To Reproduce the project, follow these steps:
 1. Clone the repository
 2. Install conda dependency manager from [here](https://docs.conda.io/en/latest/)
-3. Install the requirements.txt file ( `pip install -r requirements.txt` )
+3. Create conda environment ( `conda create -n myenv` )
+4. Activate conda environment ( `conda activate myenv` )
+3. Install the requirements.txt file ( `conda install --file requirements.txt` )
 ---
+
 ### [Usage](#usage)
 
 Single SMILE string
@@ -42,4 +48,27 @@ Single SMILE string
  ```model.serve()```
 
  ```model.run(smile)```
+
+ Multiple SMILES string
+
+ ```from ersilia import ErsiliaModel``
+
+ ```smiles = ["CC(=O)SC1CC2=CC(=O)CCC2(C)C2CCC3C(CCC34CCC(=O)O4)C12","CCCCCCCCCC[N+](CC)(CC)CC"]```
+
+ ```model = ErsiliaModel("eos2ta5") # pick preferred model```
+
+ ```model.serve()```
+
+ ```model.run(smile)```
+---
+### [License](#license)
+> This project is licensed under the GNU General Public License - see the [LICENSE](LICENSE.md) file for details
+---
+#### Technologies Used
+- 
+- [ersilia](https://scikit-learn.org/) for creating the models.
+- [RDKit](https://www.rdkit.org/) for preparation of chemical data.
+- [Pandas](https://pandas.pydata.org/) for data manipulation.
+- [Matplotlib](https://matplotlib.org/) for visulizations.
+---
 
