@@ -17,18 +17,29 @@
       - [Technologies Used](#technologies-used)
 ---
 ### Objective
----
 > * To predict the probability of toxicity in the chemical compounds of drugs
 ---
 ### [Data](#data)
----
 > The dataset used for this project can be found in the zipped data folder. The dataset contains 1000 entries of SMILES
 ---
 ### [Installation](#installation)
----
 The project was tested on Ubuntu 22.04.3 with Python 3.7.0
 > To Reproduce the project, follow these steps:
 1. Clone the repository
 2. Install conda dependency manager from [here](https://docs.conda.io/en/latest/)
-2. Install the requirements.txt file ( `pip install -r requirements.txt` )
+3. Install the requirements.txt file ( `pip install -r requirements.txt` )
 ---
+### [Usage](#usage)
+
+Single SMILE string
+
+ ```from ersilia import ErsiliaModel```
+
+ ```smile = "CC(=O)SC1CC2=CC(=O)CCC2(C)C2CCC3C(CCC34CCC(=O)O4)C12"```
+
+ ```model = ErsiliaModel("eos2ta5") # pick preferred model```
+
+ ```model.serve()```
+
+ ```model.run(smile)```
+
