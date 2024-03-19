@@ -8,6 +8,7 @@
 - [Prediction of hERG Channel Blockage](#Prediction-of-hERG-Channel-Blockage)
   - [Table Of Contents](#table-of-contents)
     - [Objective](#objective)
+    - [Data](#data)
     - [Installation](#installation)
     - [Usage](#usage)
     - [License](#license)
@@ -15,10 +16,16 @@
       - [Institution](#institution)
       - [Technologies Used](#technologies-used)
 ---
-> ### Objective
+### Objective
+---
 > * To predict the probability of toxicity in the chemical compounds of drugs
 ---
+### [Data](#data)
+
+> The dataset used for this project can be found in the zipped data folder. The dataset contains 1000 entries of SMILES
+---
 ### [Installation](#installation)
+---
 The project was tested on Ubuntu 22.04.3 with Python 3.7.0
 > To Reproduce the project, follow these steps:
 1. Clone the repository
