@@ -21,7 +21,7 @@
 > * To predict the probability of toxicity in the chemical compounds of drugs
 ---
 ### [Data](#data)
-
+---
 > The dataset used for this project can be found in the zipped data folder. The dataset contains 1000 entries of SMILES
 ---
 ### [Installation](#installation)
