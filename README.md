@@ -10,7 +10,9 @@
     - [Objective](#objective)
     - [Data](#data)
     - [Installation](#installation)
-    - [Usage](#usage)
+    - [Test Usage](#usage)
+    - [Project Task](#task)
+    - [Findings](#findings)
     - [License](#license)
     - [Acknowledgements](#acknowledgements)
       - [Technologies Used](#technologies-used)
@@ -25,7 +27,9 @@
 ### [Installation](#installation)
 The project was tested on Ubuntu 22.04.3 with Python 3.7.12
 > To Reproduce the project, follow these steps:
+
 > From your Ubuntu Terminal
+
 1. Install miniconda 
 
 `mkdir -p ~/miniconda3` 
@@ -62,13 +66,15 @@ Use conda to install Github CLI
 
 6. Install ersilia ( `pip install ersilia`)
 
-This project was run on Visual Studio Code, if you are using WSL Ubuntu you just have to install Visual Studio Code on your Windows operating system, then right on your Ubuntu terminal where you have activate conda ersilia environment run the command `code .` This should open visual studio code. Proceed to install Jupyer Notebook and Python Extension
+This project was run on Visual Studio Code, if you are using WSL Ubuntu you just have to install Visual Studio Code on your Windows operating system, then right on your Ubuntu terminal where you have activated conda ersilia environment run the command `code .` This should open visual studio code. Proceed to install Jupyer Notebook and Python Extension
 
 ![alt text](figures/extpython.jpg)
 ![alt text](figures/jupyterext.jpg)
 
 
-### [Usage](#usage)
+### [Test Usage](#usage)
+
+Create an ipynb file to test models from the Ersilia Model Hub ```index.ipynb```
 
 Single SMILE string
 
@@ -76,7 +82,7 @@ Single SMILE string
 
  ```smile = "CC(=O)SC1CC2=CC(=O)CCC2(C)C2CCC3C(CCC34CCC(=O)O4)C12"```
 
- ```model = ErsiliaModel("eos2ta5") # pick preferred model```
+ ```model = ErsiliaModel("eos3b5e") # pick preferred model```
 
  ```model.serve()```
 
@@ -88,11 +94,31 @@ Single SMILE string
 
  ```smiles = ["CC(=O)SC1CC2=CC(=O)CCC2(C)C2CCC3C(CCC34CCC(=O)O4)C12","CCCCCCCCCC[N+](CC)(CC)CC"]```
 
- ```model = ErsiliaModel("eos2ta5") # pick preferred model```
+ ```model = ErsiliaModel("eos3b5e") # pick preferred model```
 
  ```model.serve()```
 
  ```model.run(smiles)```
+
+### [Project Task](#task)
+
+* Run predictions of 1000 molecules and evaluate results
+
+* Make sure the molecules are presented in the standard SMILES format
+
+* You can get molecules from public databases such as [PubChem](https://pubchem.ncbi.nlm.nih.gov/), [ChEMBL](https://www.ebi.ac.uk/chembl/), [DrugBank](https://go.drugbank.com/) and [ZINC](https://zinc20.docking.org/)
+
+* Clone the repository ```git clone https://github.com/atienosonia/ersilia_machine_learning.git```
+
+* Install RDKit package from your Ubuntu terminal to allow you perform molecular validation and standardization
+
+* Open Visual Studio Code through your Ubuntu terminal `code .`
+
+* Select ersilia kernel
+
+* Run the notebook 00_model_bias.ipynb
+
+### [Findings](#findings)
 
 ### [License](#license)
 
