@@ -12,6 +12,7 @@
     - [Installation](#installation)
     - [Test Usage](#usage)
     - [Project Task 1](#task1)
+    - [Project Task 2](#task2)
     - [Findings](#findings)
     - [License](#license)
     - [Acknowledgements](#acknowledgements)
@@ -22,7 +23,7 @@
 
 ### [Data](#data)
 > The dataset used for this project can be found in the data folder. The dataset contains 1000 entries of SMILES
-> The dataset is called reference_library.csv
+> The dataset is called `reference_library.csv`
 
 ### [Installation](#installation)
 The project was tested on Ubuntu 22.04.3 with Python 3.7.12
@@ -120,14 +121,14 @@ Single SMILE string
 
 ### [Findings](#findings)
 
-> 1000 SMILES were used for the project, after molecular validation and standardization only 995 SMILES remained.
-> Out of the 995 , 636 were hERG non blockers and 359 were blockers
+1000 SMILES were used for the project, after molecular validation and standardization only 995 SMILES remained.
+Out of the 995 , 636 were hERG non blockers and 359 were hERG blockers
 
-> The histogram and KDE plot show the distribution of probability predictions with most observations being less than 0.5, this highlights the class imbalance of the dataset. Most of the predictions were non blockers
+The histogram and KDE plot show the distribution of probability of toxicity predictions with most observations being less than 0.5, this highlights the class imbalance of the dataset. Most of the predictions were non blockers
 
 ![alt text](figures/1000_molecules_predictions_output_evaluation.png)
 
-
+### [Project Task 2](#task2)
 
 ### [License](#license)
 
