@@ -34,7 +34,7 @@ The project was tested on Ubuntu 22.04.3 with Python 3.7.12
 `rm -rf ~/miniconda3/miniconda.sh`
 `~/miniconda3/bin/conda init bash`
 2. Install Git and Github CLI 
-Install Git through (here)[https://git-scm.com/book/en/v2/Getting-Started-Installing-Git]
+Install Git through [here](https://git-scm.com/book/en/v2/Getting-Started-Installing-Git)
 
 Installing Github CLI 
 
@@ -53,8 +53,8 @@ Use conda to install Github CLI
 
 This project was run on Visual Studio Code, if you are using WSL Ubuntu you just have to install Visual Studio Code on your Windows operating system, then right on your Ubuntu terminal where you have activate conda ersilia environment run the command `code .` This should open visual studio code. Proceed to install Jupyer Notebook and Python Extension
 
-![alt text](figures/jupyterext.jpg)
 ![alt text](figures/extpython.jpg)
+![alt text](figures/jupyterext.jpg)
 
 
 ### [Usage](#usage)
