@@ -11,7 +11,7 @@
     - [Data](#data)
     - [Installation](#installation)
     - [Test Usage](#usage)
-    - [Project Task](#task)
+    - [Project Task 1](#task1)
     - [Findings](#findings)
     - [License](#license)
     - [Acknowledgements](#acknowledgements)
@@ -100,7 +100,7 @@ Single SMILE string
 
  ```model.run(smiles)```
 
-### [Project Task](#task)
+### [Project Task 1](#task1)
 
 * Run predictions of 1000 molecules and evaluate results
 
@@ -110,7 +110,7 @@ Single SMILE string
 
 * Clone the repository ```git clone https://github.com/atienosonia/ersilia_machine_learning.git```
 
-* Install RDKit package from your Ubuntu terminal to allow you perform molecular validation and standardization
+* Install RDKit package from your Ubuntu terminal to allow you perform molecular validation and standardization ```pip install rdkit```
 
 * Open Visual Studio Code through your Ubuntu terminal `code .`
 
@@ -119,6 +119,15 @@ Single SMILE string
 * Run the notebook 00_model_bias.ipynb
 
 ### [Findings](#findings)
+
+> 1000 SMILES were used for the project, after molecular validation and standardization only 995 SMILES remained.
+> Out of the 995 , 636 were hERG non blockers and 359 were blockers
+
+> The histogram and KDE plot show the distribution of probability predictions with most observations being less than 0.5, this highlights the class imbalance of the dataset. Most of the predictions were non blockers
+
+![alt text](figures/1000_molecules_predictions_output_evaluation.png)
+
+
 
 ### [License](#license)
 
