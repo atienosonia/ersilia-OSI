@@ -132,6 +132,10 @@ Single SMILE string
 
 * The author's publication can be found [here](https://drive.google.com/file/d/18ul4T1nYLA8z1bHCVe4nK-IcNpIx58nv/view?usp=sharing), the model whose results we are trying to reproduce is known as cardiotox net
 
+* The datasets that were used to train the model can be found [here](https://github.com/Abdulk084/CardioTox/tree/master/data)
+
+* Three test sets were used to train the model, train set 1 had a total of 12,620 molecules with 6643 labelled as hERG blockers and 5977 as hERG non-blockers. train set 2 had 11 blockers and 30 non-blockers and train set 3 had 53 blockers and 786 non-blockers
+
 * The model was tested on Ubuntu 20.04 Python 3.8.5
 
 * To run the cardiotox net model follow the following steps :
@@ -170,7 +174,31 @@ You might encounter the error ```ModuleNotFoundError: No module named 'numpy.ran
 
 ```pip install numpy==1.19.5```
 
-now you should be able to run ```python test.py``` without generating any error 
+now you should be able to run ```python test.py``` without generating any error.
+
+To generate the results the authors got (i.e NPV, SPE, SEN etc) you will need to have the the predicted values. To do that you need to run the cardiotox model and store the predictions. You can get cardiotox model implementation [here](https://github.com/atienosonia/ersilia_machine_learning/blob/master/cardiotex_implementation.py), download the file and store it in your Cardiotox Folder, right after running ```python test.py```. go ahead and run ```python cardiotex_implementation.py```, this should store the predictions in your data folder, after which you can now proceed to producing the publication results. 
+
+#### Results
+
+The evaluation metrics used for the model were AUC-ROC, specifity(SPE), sensitivity(SEN), negative predictive
+value (NPV), positive predictive value (PPV), accuracy (ACC) and Matthew’s correlation coefcient (MCC). **AUC-ROC** evaluates the models ability to distinguish hERG blockers and hERG non - blockers, **specifity (SPE)** describes what
+proportion of the non-hERG blocker class got correctly classifed, **NPV** describes the probability of a molecule predicted as non-hERG blocker to be actually as non-hERG blocker, **PPV** describes the probability of a molecule predicted as hERG blocker to be actually as hERG blocker, **ACC** measures the predictions the model got right and MCC is is a single-value metric that has a range of −1 to 1 where −1 indicates a completely wrong binary classifer while 1 indicates a completely correct binary classifer. Below are the evaluation metrics
+
+| Data      | Method   | MCC   | NPV  |  ACC |  PPV |  SPE | SEN  | B-ACC |
+| ----------| ---------|-------|------|------|------|------|------|-------|
+| Test Set 1| Cardiotox| 0.5994|0.6875|0.8095|0.8929|0.7857|0.8333|0.8095 |
+| Test Set 2| Carditox | 0.4523|0.9474|0.7545|0.4545|0.6   |0.9091|0.7545 |
+| Test Set 3| Cardiotox| 0.2202|0.986 |0.7462|0.1125|0.6983|0.7941|0.7462 |
+
+You can go ahead and compare the results with the authors. 
+
+From Ersilia Model Hub run eos2ta5 on test set 1 . Generate the predictions and compute the evaluation metrics 
+
+| Data      | Method   | MCC   | NPV  |  ACC |  PPV |  SPE | SEN  | B-ACC |
+| ----------| ---------|-------|------|------|------|------|------|-------|
+| Test Set 1| eos2ta5  | 0.5994|0.6875|0.8095|0.8929|0.7857|0.8333|0.8095 |
+
+Based on the results obtained, the model Cardiotox Net evaluation metrics are reproducible. eos2ta5 results are also consistent with cardiotox net results.
 
 ### [License](#license)
 
