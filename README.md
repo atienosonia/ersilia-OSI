@@ -207,7 +207,7 @@ This project is licensed under the GNU General Public License - see the [LICENSE
 
 ### [Resources](#resources)
 
-Read Ersilia's [documentation](https://ersilia.gitbook.io/ersilia-book)
+* Read Ersilia's [documentation](https://ersilia.gitbook.io/ersilia-book)
 
 ### [Technologies Used](#technologies-used) 
 
