@@ -15,19 +15,20 @@
     - [Project Task 2](#task2)
     - [Findings](#findings)
     - [License](#license)
-    - [Acknowledgements](#acknowledgements)
+    - [Resources](#resources)
       - [Technologies Used](#technologies-used)
 
 ### Objective
 > * To predict the probability of toxicity in the chemical compounds of drugs
 
 ### [Data](#data)
-> The dataset used for this project can be found in the data folder. The dataset contains 1000 entries of SMILES
+> The dataset used for this project can be found in the data folder. The dataset contains 1000 entries of SMILES.
 > The dataset is called `reference_library.csv`
 
 ### [Installation](#installation)
-The project was tested on Ubuntu 22.04.3 with Python 3.7.12
-> To Reproduce the project, follow these steps:
+The project was tested on Ubuntu 22.04 with Python 3.7
+
+To Reproduce the project, follow these steps:
 
 > From your Ubuntu Terminal
 
@@ -67,7 +68,7 @@ Use conda to install Github CLI
 
 6. Install ersilia ( `pip install ersilia`)
 
-This project was run on Visual Studio Code, if you are using WSL Ubuntu you just have to install Visual Studio Code on your Windows operating system, then right on your Ubuntu terminal where you have activated conda ersilia environment run the command `code .` This should open visual studio code. Proceed to install Jupyer Notebook and Python Extension
+This project was run on Visual Studio Code, if you are using WSL Ubuntu you just have to install Visual Studio Code on your Windows operating system, then right on your Ubuntu terminal where you have activated conda ersilia environment run the command `code .` This should open visual studio code. Proceed to install jupyer notebook and python extension
 
 ![alt text](figures/extpython.jpg)
 ![alt text](figures/jupyterext.jpg)
@@ -123,22 +124,22 @@ Single SMILE string
 
 * 1000 SMILES were used for the project, after molecular validation and standardization only 995 SMILES remained.Out of the 995 , 636 were hERG non blockers and 359 were hERG blockers
 
-* The histogram and KDE plot show the distribution of probability of toxicity predictions with most observations being less than 0.5, this highlights the class imbalance of the dataset. Most of the predictions were non blockers
+* The histogram and KDE plot show the distribution of probability of toxicity predictions with most observations being less than 0.5, this highlights the class imbalance of the dataset. Most of the predictions were hERG non - blockers
 
 ![alt text](figures/1000_molecules_predictions_output_evaluation.png)
 
 ### [Project Task 2](#task2)
-* Identify a result that can be produced from the authors publication, after producing the result check if they are the same as the result the authors obtained in their publication
+* Identify a result that can be produced from the authors publication, after producing the result check if they are the same as the result the authors obtained in their publication.
 
 * The author's publication can be found [here](https://drive.google.com/file/d/18ul4T1nYLA8z1bHCVe4nK-IcNpIx58nv/view?usp=sharing), the model whose results we are trying to reproduce is known as cardiotox net
 
 * The datasets that were used to train the model can be found [here](https://github.com/Abdulk084/CardioTox/tree/master/data)
 
-* Three test sets were used to train the model, train set 1 had a total of 12,620 molecules with 6643 labelled as hERG blockers and 5977 as hERG non-blockers. train set 2 had 11 blockers and 30 non-blockers and train set 3 had 53 blockers and 786 non-blockers
+* Three test sets were used to train the model, train set 1 had a total of 12,620 molecules with 6643 labelled as hERG blockers and 5977 as hERG non-blockers, train set 2 had 11 blockers and 30 non-blockers and train set 3 had 53 blockers and 786 non-blockers
 
-* The model was tested on Ubuntu 20.04 Python 3.8.5
+* The model was tested on Ubuntu 20.04 Python 3.8
 
-* To run the cardiotox net model follow the following steps :
+* To run the cardiotox net model follow the steps below :
 
 1. install miniconda 
 
@@ -168,7 +169,7 @@ You should get the below output :
 
 ![alt text](figures/cardiotoxevalmetrics.jpg)
 
-You might encounter the error ```ModuleNotFoundError: No module named 'numpy.random.bit_generator'``` while running ```python test.py```, you can solve this by running the following codes in your command line interface
+You might encounter the error ```ModuleNotFoundError: No module named 'numpy.random.bit_generator'``` while running ```python test.py```, you can solve this by running the following codes in your Ubuntu command line interface
 
 ```pip install protobuf==3.20.0```
 
@@ -176,13 +177,13 @@ You might encounter the error ```ModuleNotFoundError: No module named 'numpy.ran
 
 now you should be able to run ```python test.py``` without generating any error.
 
-To generate the results the authors got (i.e NPV, SPE, SEN etc) you will need to have the the predicted values. To do that you need to run the cardiotox model and store the predictions. You can get cardiotox model implementation [here](https://github.com/atienosonia/ersilia_machine_learning/blob/master/cardiotex_implementation.py), download the file and store it in your Cardiotox Folder, right after running ```python test.py```. go ahead and run ```python cardiotex_implementation.py```, this should store the predictions in your data folder, after which you can now proceed to producing the publication results. 
+To generate the results the authors got (i.e NPV, SPE, SEN etc) you will need to have the the predicted values. To do that you need to run the cardiotox model and store the predictions. You can get cardiotox model implementation [here](https://github.com/atienosonia/ersilia_machine_learning/blob/master/cardiotex_implementation.py), download the file and store it in your Cardiotox folder, right after running ```python test.py```. go ahead and run ```python cardiotex_implementation.py```, this should store the predictions in your data folder, after which you can now proceed to producing the publication evaluation results. 
 
-#### Results
+### Results
 
 The evaluation metrics used for the model were AUC-ROC, specifity(SPE), sensitivity(SEN), negative predictive
 value (NPV), positive predictive value (PPV), accuracy (ACC) and Matthew’s correlation coefcient (MCC). **AUC-ROC** evaluates the models ability to distinguish hERG blockers and hERG non - blockers, **specifity (SPE)** describes what
-proportion of the non-hERG blocker class got correctly classifed, **NPV** describes the probability of a molecule predicted as non-hERG blocker to be actually as non-hERG blocker, **PPV** describes the probability of a molecule predicted as hERG blocker to be actually as hERG blocker, **ACC** measures the predictions the model got right and MCC is is a single-value metric that has a range of −1 to 1 where −1 indicates a completely wrong binary classifer while 1 indicates a completely correct binary classifer. Below are the evaluation metrics
+proportion of the non-hERG blocker class got correctly classifed, **NPV** describes the probability of a molecule predicted as non-hERG blocker to be actually as non-hERG blocker, **PPV** describes the probability of a molecule predicted as hERG blocker to be actually as hERG blocker, **ACC** measures the predictions the model got right and **MCC** is a single-value metric that has a range of −1 to 1 where −1 indicates a completely wrong binary classifer while 1 indicates a completely correct binary classifer. Below are the evaluation metrics:
 
 | Data      | Method   | MCC   | NPV  |  ACC |  PPV |  SPE | SEN  | B-ACC |
 | ----------| ---------|-------|------|------|------|------|------|-------|
@@ -192,7 +193,7 @@ proportion of the non-hERG blocker class got correctly classifed, **NPV** descri
 
 You can go ahead and compare the results with the authors. 
 
-From Ersilia Model Hub run eos2ta5 on test set 1 . Generate the predictions and compute the evaluation metrics 
+From Ersilia Model Hub run eos2ta5 on Test Set 1 . Generate the predictions and compute the evaluation metrics 
 
 | Data      | Method   | MCC   | NPV  |  ACC |  PPV |  SPE | SEN  | B-ACC |
 | ----------| ---------|-------|------|------|------|------|------|-------|
@@ -202,7 +203,11 @@ Based on the results obtained, the model Cardiotox Net evaluation metrics are re
 
 ### [License](#license)
 
-> This project is licensed under the GNU General Public License - see the [LICENSE](LICENSE.md) file for details
+This project is licensed under the GNU General Public License - see the [LICENSE](LICENSE.md) file for details
+
+### [Resources](#resources)
+
+Read Ersilia's [documentation](https://ersilia.gitbook.io/ersilia-book)
 
 ### [Technologies Used](#technologies-used) 
 
