@@ -121,10 +121,10 @@ Single SMILE string
 
 ### [Findings](#findings)
 
-1000 SMILES were used for the project, after molecular validation and standardization only 995 SMILES remained.
+* 1000 SMILES were used for the project, after molecular validation and standardization only 995 SMILES remained.
 Out of the 995 , 636 were hERG non blockers and 359 were hERG blockers
 
-The histogram and KDE plot show the distribution of probability of toxicity predictions with most observations being less than 0.5, this highlights the class imbalance of the dataset. Most of the predictions were non blockers
+* The histogram and KDE plot show the distribution of probability of toxicity predictions with most observations being less than 0.5, this highlights the class imbalance of the dataset. Most of the predictions were non blockers
 
 ![alt text](figures/1000_molecules_predictions_output_evaluation.png)
 
