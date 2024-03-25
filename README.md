@@ -121,14 +121,55 @@ Single SMILE string
 
 ### [Findings](#findings)
 
-* 1000 SMILES were used for the project, after molecular validation and standardization only 995 SMILES remained.
-Out of the 995 , 636 were hERG non blockers and 359 were hERG blockers
+* 1000 SMILES were used for the project, after molecular validation and standardization only 995 SMILES remained.Out of the 995 , 636 were hERG non blockers and 359 were hERG blockers
 
 * The histogram and KDE plot show the distribution of probability of toxicity predictions with most observations being less than 0.5, this highlights the class imbalance of the dataset. Most of the predictions were non blockers
 
 ![alt text](figures/1000_molecules_predictions_output_evaluation.png)
 
 ### [Project Task 2](#task2)
+* Identify a result that can be produced from the authors publication, after producing the result check if they are the same as the result the authors obtained in their publication
+
+* The author's publication can be found [here](file:///C:/Users/user/Downloads/eos2ta5%20(2).pdf), the model whose results we are trying to reproduce is known as cardiotox net
+
+* The model was tested on Ubuntu 20.04 Python 3.8.5
+
+* To run the cardiotox net model follow the following steps :
+
+1. install miniconda 
+
+2. download environment.yml file from [here](https://github.com/Abdulk084/CardioTox/blob/master/environment.yml)
+
+3. restore environment.yml
+
+```conda env create -f environment.yml```
+
+4. activate the environment
+
+```conda activate cardiotox```
+
+5. install pyBioMed
+
+```cd PyBioMed```
+
+```python setup.py install```
+
+```cd ..```
+
+6. test the model
+
+```python test.py```
+
+You should get the below output :
+
+![alt text](figures/cardiotoxevalmetrics.jpg)
+
+You might encounter the error ```ModuleNotFoundError: No module named 'numpy.random.bit_generator'``` while running ```python test.py```, you can solve this by running the following codes in your command line 
+
+```pip install protobuf==3.20.0```
+```pip install numpy==1.19.5```
+
+now you should be able to run ```python test.py``` without generating any error 
 
 ### [License](#license)
 
