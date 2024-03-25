@@ -130,7 +130,7 @@ Single SMILE string
 ### [Project Task 2](#task2)
 * Identify a result that can be produced from the authors publication, after producing the result check if they are the same as the result the authors obtained in their publication
 
-* The author's publication can be found [here](file:///C:/Users/user/Downloads/eos2ta5%20(2).pdf), the model whose results we are trying to reproduce is known as cardiotox net
+* The author's publication can be found [here](https://drive.google.com/file/d/18ul4T1nYLA8z1bHCVe4nK-IcNpIx58nv/view?usp=sharing), the model whose results we are trying to reproduce is known as cardiotox net
 
 * The model was tested on Ubuntu 20.04 Python 3.8.5
 
@@ -164,9 +164,10 @@ You should get the below output :
 
 ![alt text](figures/cardiotoxevalmetrics.jpg)
 
-You might encounter the error ```ModuleNotFoundError: No module named 'numpy.random.bit_generator'``` while running ```python test.py```, you can solve this by running the following codes in your command line 
+You might encounter the error ```ModuleNotFoundError: No module named 'numpy.random.bit_generator'``` while running ```python test.py```, you can solve this by running the following codes in your command line interface
 
 ```pip install protobuf==3.20.0```
+
 ```pip install numpy==1.19.5```
 
 now you should be able to run ```python test.py``` without generating any error 
