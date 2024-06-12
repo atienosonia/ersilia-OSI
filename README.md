@@ -2,26 +2,13 @@
 
 Ersilia Model Hub is an open source repository of AI/ML models used for biomedical research. This project aims to look at one of the models from the Hub to check if the model is accurate and reproducible. This will be done through running a series of tasks
 
-![Visual Studio Code](https://img.shields.io/badge/Visual_Studio_Code-007ACC?style=for-the-badge&logo=visual-studio-code&logoColor=white)  ![numpy](https://img.shields.io/badge/Numpy-777BB4?style=for-the-badge&logo=numpy&logoColor=white)  ![pandas](https://img.shields.io/badge/Pandas-2C2D72?style=for-the-badge&logo=pandas&logoColor=white)   ![python](https://img.shields.io/badge/Python-FFD43B?style=for-the-badge&logo=python&logoColor=blue)    ![ersilia](https://img.shields.io/badge/ersilia-F7931E?style=for-the-badge&logo=scikit-learn&logoColor=white)    ![rdkit](https://img.shields.io/badge/RDKit-209117?style=for-the-badge&logo=nlp&logoColor=white)
-
-
-The project was tested on Ubuntu 22.04 with Python 3.7
 
 ### [Project Task 1](#task1)
 
 * Run predictions of 1000 molecules and evaluate results
 
-* Make sure the molecules are presented in the standard SMILES format
-
 * You can get molecules from public databases such as [PubChem](https://pubchem.ncbi.nlm.nih.gov/), [ChEMBL](https://www.ebi.ac.uk/chembl/), [DrugBank](https://go.drugbank.com/) and [ZINC](https://zinc20.docking.org/)
 
-### [Findings](#findings)
-
-* 1000 SMILES were used for the project, after molecular validation and standardization only 995 SMILES remained.Out of the 995 , 636 were hERG non blockers and 359 were hERG blockers
-
-* The histogram and KDE plot show the distribution of probability of toxicity predictions with most observations being less than 0.5, this highlights the class imbalance of the dataset. Most of the predictions were hERG non - blockers
-
-![alt text](figures/1000_molecules_predictions_output_evaluation.png)
 
 ### [Project Task 2](#task2)
 * Identify a result that can be produced from the authors publication, after producing the result check if they are the same as the result the authors obtained in their publication.
@@ -72,29 +59,8 @@ You might encounter the error ```ModuleNotFoundError: No module named 'numpy.ran
 
 now you should be able to run ```python test.py``` without generating any error.
 
-To generate the results the authors got (i.e NPV, SPE, SEN etc) you will need to have the the predicted values. To do that you need to run the cardiotox model and store the predictions. You can get cardiotox model implementation [here](https://github.com/atienosonia/ersilia_machine_learning/blob/master/cardiotex_implementation.py), download the file and store it in your Cardiotox folder, right after running ```python test.py```. go ahead and run ```python cardiotex_implementation.py```, this should store the predictions in your data folder, after which you can now proceed to producing the publication evaluation results. 
+To generate the results the authors got (i.e NPV, SPE, SEN etc) you will need to get the predicted values. To do that you need to run the cardiotox model and store the predictions. You can get cardiotox model implementation [here](https://github.com/atienosonia/ersilia_machine_learning/blob/master/cardiotex_implementation.py), download the file and store it in your Cardiotox folder, right after running ```python test.py```. go ahead and run ```python cardiotex_implementation.py```, this should store the predictions in your data folder, after which you can now proceed to producing the publication evaluation results. 
 
-### Results
-
-The evaluation metrics used for the model were AUC-ROC, specifity(SPE), sensitivity(SEN), negative predictive
-value (NPV), positive predictive value (PPV), accuracy (ACC) and Matthew’s correlation coefcient (MCC). **AUC-ROC** evaluates the models ability to distinguish hERG blockers and hERG non - blockers, **specifity (SPE)** describes what
-proportion of the non-hERG blocker class got correctly classifed, **NPV** describes the probability of a molecule predicted as non-hERG blocker to be actually as non-hERG blocker, **PPV** describes the probability of a molecule predicted as hERG blocker to be actually as hERG blocker, **ACC** measures the predictions the model got right and **MCC** is a single-value metric that has a range of −1 to 1 where −1 indicates a completely wrong binary classifer while 1 indicates a completely correct binary classifer. Below are the evaluation metrics:
-
-| Data      | Method   | MCC   | NPV  |  ACC |  PPV |  SPE | SEN  | B-ACC |
-| ----------| ---------|-------|------|------|------|------|------|-------|
-| Test Set 1| Cardiotox| 0.5994|0.6875|0.8095|0.8929|0.7857|0.8333|0.8095 |
-| Test Set 2| Carditox | 0.4523|0.9474|0.7545|0.4545|0.6   |0.9091|0.7545 |
-| Test Set 3| Cardiotox| 0.2202|0.986 |0.7462|0.1125|0.6983|0.7941|0.7462 |
-
-You can go ahead and compare the results with the authors. 
-
-From Ersilia Model Hub run eos2ta5 on Test Set 1 . Generate the predictions and compute the evaluation metrics 
-
-| Data      | Method   | MCC   | NPV  |  ACC |  PPV |  SPE | SEN  | B-ACC |
-| ----------| ---------|-------|------|------|------|------|------|-------|
-| Test Set 1| eos2ta5  | 0.5994|0.6875|0.8095|0.8929|0.7857|0.8333|0.8095 |
-
-Based on the results obtained, the model Cardiotox Net evaluation metrics are reproducible. eos2ta5 results are also consistent with cardiotox net results.
 
 ### [Project Task 3](#task3)
 
